@@ -1,0 +1,56 @@
+pipeline {
+  environment {
+    image_name = "shakilsaddam/laravel-app1"
+    registryCredential = 'shakilsaddam-dockerhub'
+    dockerImage = ''
+  }
+  agent any
+  stages {
+    stage('Git Clone') {
+      steps {
+        git 'https://github.com/shakilsaddam/devops_test_bs23.git'
+      }
+    }
+    stage('Building/Dockerizing Image') {
+      steps{
+        script {
+          dockerImage = docker.build image_name
+        }
+      }
+    }
+    stage('Docker Push to Dockerhub') {
+      steps{
+        script {
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push("$BUILD_NUMBER")
+             dockerImage.push('latest')
+
+          }
+        }
+      }
+    }
+    stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi $image_name:$BUILD_NUMBER"
+        sh "docker rmi $image_name:latest"
+
+      }
+    }
+
+    stage('Deploy App') {
+        steps {
+            script {
+                kubernetesDepoy(configs: "app1/deploy/deploy-definition.yml", kubeconfigId: "myKubeConfig")
+            }
+        }
+    }
+
+    stage('Deploy NodePort Service') {
+        steps {
+            script {
+                kubernetesDepoy(configs: "app1/deploy/service-definition.yml", kubeconfigId: "myKubeConfig")
+            }
+        }
+    }
+  }
+}

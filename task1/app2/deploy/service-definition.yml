@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: laravel-app2-service
+  labels:
+    app: laravel-app2
+spec:
+  selector:
+    app: laravel-app2
+  type: NodePort
+  ports:
+    - nodePort: 32000
+      port: 80
+      targetPort: 3000

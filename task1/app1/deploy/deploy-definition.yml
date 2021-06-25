@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laravel-app1
+  labels:
+    app: laravel-app1
+spec:
+  template:
+    metadata:
+      name: app1-pod
+      labels:
+        app: laravel-app1
+    spec:
+      containers:
+        - name: laravel-app1
+          image: shakilsaddam/laravel-app1
+          ports:
+          - containerPort: 3000
+      nodeSelectort:
+        node: kubnode1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: laravel-app1

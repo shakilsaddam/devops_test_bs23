@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laravel-app2
+  labels:
+    app: laravel-app2
+spec:
+  template:
+    metadata:
+      name: app2-pod
+      labels:
+        app: laravel-app2
+    spec:
+      containers:
+        - name: laravel-app2
+          image: shakilsaddam/laravel-app2
+          ports:
+          - containerPort: 3000
+      nodeSelectort:
+        node: kubnode2
+  replicas: 1
+  selector:
+    matchLabels:
+      app: laravel-app2
