@@ -13,14 +13,6 @@ $ vagrant up
 ```
 It will create a complete ready Kubernetes Cluster which contains 1 Master and 2 Worker Nodes. Calico network plugin for CNI will also configured automatically. Provisioning Master and Workers VMs are done by Vagrant scripts, and downloading, installing, configuring the cluster is done by Ansible scripts. Ansible script also contains the CNI setup instructions.
 
-
-### Define amount of nodes
-in Vagrantfile:
-```
-N = 2
-```
-
-
 ### Spin up cluster
 ```
 $ vagrant up
@@ -34,3 +26,6 @@ NAME         STATUS   ROLES                  AGE     VERSION
 k8s-master   Ready    control-plane,master   5m37s   v1.20.0
 node-1       Ready    <none>                 3m38s   v1.20.0
 node-2       Ready    <none>                 78s     v1.20.0
+```
+
+Now, you are ready to deploy applications to the Cluster.
