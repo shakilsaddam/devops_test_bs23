@@ -34,6 +34,4 @@ Kubernetes Dashboard, Metric Server, and an appropriate Service Mesh (eg. Istio)
 Prometheus Monitoring tool is a big relief for Monitoring and Alerting Cloud Native Applications with in Kubernetes Cluster.
 <br/> <br/>
 ### Justification for Cloud Solution amonge On-premise, Cloud, and Hybrid.
-In such scenario, I would go for Cloud Solution. It gives a huge flexibility in terms of High Availability, Application Scaling, Bandwidth Consumption, Fault Tolerance, ease integration of different typs of Services such as CDN etc. But, there is an issue with Cloud Providers as there is no local datacener of any of the cloud providers (AWS, Azure, GCP) yet. It increases the latency between users and applications.
-
-
+In such scenario, I would go for Cloud Solution. It gives a huge flexibility in terms of High Availability, Application Scaling, Bandwidth Consumption, Fault Tolerance, ease integration of different typs of Services such as CDN etc. But, there is an issue with Cloud Providers as there is no local datacener of any of the cloud providers (AWS, Azure, GCP) yet. It increases the latency between users and applications. 
