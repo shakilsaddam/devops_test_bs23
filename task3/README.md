@@ -1,7 +1,9 @@
 ## A Highly Available Microservices Architecture
+
 <figure>
-<img src="diagrams/HighlyAvailable-K8S-Cluster.jpeg" width="600">
+<center> <img src="diagrams/HighlyAvailable-K8S-Cluster.jpeg" width="600">
     <figcaption>The Cluster is designed to achieve Highly Available Kubernetes in one region and N availability zones. </figcaption>
+</center>
 </figure>
 
 One master node per zone, associated with one Autoscalling Group for all zones.
