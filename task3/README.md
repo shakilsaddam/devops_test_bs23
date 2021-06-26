@@ -1,6 +1,6 @@
 ## A Highly Available Microservices Architecture
 
-! [Highly Available Kubernetes Cluster](https://github.com/shakilsaddam/devops_test_bs23/blob/master/task3/diagrams/HighlyAvailable-K8S-Cluster.jpeg)
+! [Highly Available Kubernetes Cluster](task3/diagrams/HighlyAvailable-K8S-Cluster.jpeg)
 
 The Cluster is designed to achieve Highly Available Kubernetes in one region and N availability zones. 
 
