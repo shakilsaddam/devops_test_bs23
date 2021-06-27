@@ -16,9 +16,9 @@ docker push shakilsaddam/laravel-app2
 ```
 
 You can find those Docker Images: <br/>
-App1: https://hub.docker.com/repository/docker/shakilsaddam/laravel-app1 <br/>
+App1: https://hub.docker.com/r/shakilsaddam/laravel-app1 <br/>
 
-App2: https://hub.docker.com/repository/docker/shakilsaddam/laravel-app2
+App2: https://hub.docker.com/r/shakilsaddam/laravel-app2
 
 `app1/deploy` directory contains kubernetes deployment and service yaml files.
 
